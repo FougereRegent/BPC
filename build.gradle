@@ -35,7 +35,6 @@ repositories {
 	mavenCentral()
 }
 
-
 subprojects {
 	pitest {
 		pitestVersion = "1.10.4"
