@@ -1,2 +1,6 @@
-# BPC
-Projet bonne Pratique du code
+# Bonne Pratique De Code
+
+Personnes du TP : 
+
+- Lasserre Julie
+- Venant-Valéry Damien
