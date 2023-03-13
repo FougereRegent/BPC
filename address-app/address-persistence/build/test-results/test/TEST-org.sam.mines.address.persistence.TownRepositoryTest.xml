@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="org.sam.mines.address.persistence.TownRepositoryTest" tests="5" skipped="0" failures="0" errors="0" timestamp="2023-03-13T09:09:42" hostname="danette" time="0.26">
+  <properties/>
+  <testcase name="shouldFindAll()" classname="org.sam.mines.address.persistence.TownRepositoryTest" time="0.154"/>
+  <testcase name="shouldSave()" classname="org.sam.mines.address.persistence.TownRepositoryTest" time="0.035"/>
+  <testcase name="shouldFindByPostCode()" classname="org.sam.mines.address.persistence.TownRepositoryTest" time="0.037"/>
+  <testcase name="shouldShowGraph()" classname="org.sam.mines.address.persistence.TownRepositoryTest" time="0.021"/>
+  <testcase name="shouldFindAllByName()" classname="org.sam.mines.address.persistence.TownRepositoryTest" time="0.009"/>
+  <system-out><![CDATA[10:09:38,863 |-INFO in ch.qos.logback.classic.LoggerContext[default] - This is logback-classic version 1.4.5
+10:09:38,891 |-INFO in ch.qos.logback.classic.LoggerContext[default] - Could NOT find resource [logback-test.xml]
+10:09:38,893 |-INFO in ch.qos.logback.classic.LoggerContext[default] - Found resource [logback.xml] at [file:/home/damien/Documents/IMT%20Mines%20Ales/Seconde%20Years/Bonne_Pratique_Code/addressApp/address-app/address-persistence/build/resources/test/logback.xml]
+10:09:38,952 |-WARN in ch.qos.logback.core.joran.action.IncludeAction - Could not find resource corresponding to [/org/springframework/boot/logging/logback/base.xml]
+10:09:38,993 |-INFO in ch.qos.logback.core.model.processor.AppenderModelHandler - Processing appender named [STDOUT]
+10:09:38,993 |-INFO in ch.qos.logback.core.model.processor.AppenderModelHandler - About to instantiate appender of type [ch.qos.logback.core.ConsoleAppender]
+10:09:39,002 |-INFO in ch.qos.logback.core.model.processor.ImplicitModelHandler - Assuming default type [ch.qos.logback.classic.encoder.PatternLayoutEncoder] for [encoder] property
+10:09:39,049 |-INFO in ch.qos.logback.classic.model.processor.RootLoggerModelHandler - Setting level of ROOT logger to ERROR
+10:09:39,049 |-INFO in ch.qos.logback.core.model.processor.AppenderRefModelHandler - Attaching appender named [STDOUT] to Logger[ROOT]
+10:09:39,050 |-INFO in ch.qos.logback.core.model.processor.DefaultProcessor@1f6917fb - End of configuration.
+10:09:39,051 |-INFO in ch.qos.logback.classic.joran.JoranConfigurator@41eb94bc - Registering current configuration as safe fallback point
+
+Hibernate: create table address (uuid binary(16) not null, number integer, street varchar(255), town_uuid binary(16), primary key (uuid))
+Hibernate: create table target (uuid binary(16) not null, firstname varchar(255), name varchar(255), primary key (uuid))
+Hibernate: create table targetaddress (address_uuid binary(16) not null, target_uuid binary(16) not null, primary key (address_uuid, target_uuid))
+Hibernate: create table town (uuid binary(16) not null, name varchar(255), postcode integer, primary key (uuid))
+Hibernate: alter table address add constraint FKihhxjo4m9h9cvfgf64vj65ekp foreign key (town_uuid) references town
+Hibernate: alter table targetaddress add constraint FK1rgb27l71b1niiw6gbmmwygev foreign key (target_uuid) references target
+Hibernate: alter table targetaddress add constraint FK2d7sy5r33dq7tblbmtw09wmlb foreign key (address_uuid) references address
+Hibernate: select t1_0.uuid,t1_0.name,t1_0.postcode from town t1_0
+Hibernate: select t1_0.uuid,t1_0.name,t1_0.postcode from town t1_0 where t1_0.uuid=?
+Hibernate: select t1_0.uuid,t1_0.name,t1_0.postcode from town t1_0 where t1_0.postcode=?
+Hibernate: select t1_0.uuid,t1_0.name,t1_0.postcode from town t1_0 where t1_0.uuid=?
+Hibernate: select a1_0.town_uuid,a1_0.uuid,a1_0.number,a1_0.street from address a1_0 where a1_0.town_uuid=?
+org.sam.mines.address.model.AddressEntity@3b69ad19
+org.sam.mines.address.model.AddressEntity@575baeea
+Hibernate: select t1_0.address_uuid,t1_1.uuid,t1_1.firstname,t1_1.name from targetaddress t1_0 join target t1_1 on t1_1.uuid=t1_0.target_uuid where t1_0.address_uuid=?
+[]
+Hibernate: select t1_0.address_uuid,t1_1.uuid,t1_1.firstname,t1_1.name from targetaddress t1_0 join target t1_1 on t1_1.uuid=t1_0.target_uuid where t1_0.address_uuid=?
+[]
+Hibernate: select t1_0.uuid,t1_0.name,t1_0.postcode from town t1_0 where t1_0.name=?
+Hibernate: select t1_0.uuid,t1_0.name,t1_0.postcode from town t1_0 where t1_0.name=? and t1_0.postcode=?
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

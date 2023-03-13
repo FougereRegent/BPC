@@ -1,0 +1,128 @@
+openapi: 3.0.0
+info:
+  license:
+    name: MIT
+  title: Mines - address app
+  version: 1.0.0
+servers:
+- url: http://someUrl
+paths:
+  /town:
+    get:
+      operationId: list
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                items:
+                  $ref: '#/components/schemas/Town'
+                type: array
+          description: An array of towns
+      summary: List all towns
+      tags:
+      - town
+      x-accepts: application/json
+    post:
+      operationId: create
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Town'
+        required: true
+      responses:
+        "201":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Town'
+          description: Null response
+      summary: Create a town
+      tags:
+      - town
+      x-content-type: application/json
+      x-accepts: application/json
+    put:
+      operationId: update
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Town'
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Town'
+          description: Null response
+      summary: Update a town
+      tags:
+      - town
+      x-content-type: application/json
+      x-accepts: application/json
+  /town/{id}:
+    delete:
+      operationId: delete
+      parameters:
+      - explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "204":
+          content:
+            application/json:
+              schema:
+                description: ID of the deleted entity.
+                type: string
+          description: Town has been deleted.
+      summary: Delete a town.
+      tags:
+      - town
+      x-accepts: application/json
+    get:
+      operationId: get
+      parameters:
+      - description: The id of the town to retrieve
+        explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Town'
+          description: Expected response to a valid request
+      summary: Info for a specific town
+      tags:
+      - town
+      x-accepts: application/json
+components:
+  schemas:
+    Town:
+      example:
+        name: name
+        postCode: postCode
+        id: id
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+        postCode:
+          type: string
+      required:
+      - name
+      - postCode
+

@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="fr"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>TownServiceImpl.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">address-service</a> &gt; <a href="index.source.html" class="el_package">org.sam.mines.address.service.impl</a> &gt; <span class="el_source">TownServiceImpl.java</span></div><h1>TownServiceImpl.java</h1><pre class="source lang-java linenums">package org.sam.mines.address.service.impl;
+
+import jakarta.transaction.Transactional;
+import org.sam.mines.address.service.TownService;
+import org.sam.mines.address.model.TownEntity;
+import org.sam.mines.address.persistence.TownRepository;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import java.util.List;
+import java.util.Optional;
+import java.util.UUID;
+
+@Service
+public class TownServiceImpl implements TownService {
+
+<span class="fc" id="L19">    private Logger logger = LoggerFactory.getLogger(TownServiceImpl.class);</span>
+
+    private TownRepository townRepository;
+
+    @Autowired
+<span class="fc" id="L24">    public TownServiceImpl(TownRepository townRepository) {</span>
+<span class="fc" id="L25">        this.townRepository = townRepository;</span>
+<span class="fc" id="L26">    }</span>
+
+    @Override
+    public List&lt;TownEntity&gt; getAll() {
+<span class="fc" id="L30">        return townRepository.findAll();</span>
+    }
+
+    @Override
+    @Transactional
+    public Optional&lt;TownEntity&gt; get(UUID id) {
+<span class="fc" id="L36">        return townRepository.findById(id);</span>
+    }
+
+    @Override
+    public TownEntity save(TownEntity town) {
+<span class="pc bpc" id="L41" title="1 of 4 branches missed.">        if (town.getName() == null || town.getName().isBlank()) {</span>
+<span class="fc" id="L42">            throw new IllegalArgumentException(&quot;Name is required&quot;);</span>
+        }
+
+        // This is a validation example: the rule should probably be relaxed
+        // as multiple towns can have the same name
+<span class="fc" id="L47">        if (!townRepository</span>
+<span class="fc" id="L48">                .findAllByName(town.getName()).stream()</span>
+<span class="fc" id="L49">                .map(TownEntity::getId)</span>
+<span class="fc bfc" id="L50" title="All 2 branches covered.">                .allMatch(id -&gt; id.equals(town.getId()))) {</span>
+
+<span class="fc" id="L52">            throw new IllegalArgumentException(&quot;Town name already exists&quot;);</span>
+        }
+
+<span class="fc" id="L55">        return townRepository.save(town);</span>
+    }
+
+    @Override
+    public void delete(UUID id) {
+        // Some validation rule
+<span class="fc bfc" id="L61" title="All 2 branches covered.">        if (&quot;a453783c-ff59-4157-99a8-9145bdab0554&quot;.equals(id.toString())){</span>
+            // anything
+        }else {
+<span class="fc" id="L64">            townRepository.deleteById(id);</span>
+        }
+
+<span class="fc" id="L67">    }</span>
+
+    @Override
+    public List&lt;Integer&gt; findPostCodesForDepartment(int department) {
+<span class="fc" id="L71">        return townRepository.findAll().stream()</span>
+<span class="fc" id="L72">                .map(TownEntity::getPostCode)</span>
+<span class="fc bfc" id="L73" title="All 2 branches covered.">                .filter(postCode -&gt; postCode / 1000 == department).toList();</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span></div></body></html>

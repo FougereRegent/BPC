@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="org.sam.mines.examples.IterationExit" tests="3" skipped="3" failures="0" errors="0" timestamp="2023-03-13T09:09:17" hostname="danette" time="0.002">
+  <properties/>
+  <testcase name="shouldDemonstrateIterationExitBenefits()" classname="org.sam.mines.examples.IterationExit" time="0.0">
+    <skipped/>
+  </testcase>
+  <testcase name="shouldDoWithStream()" classname="org.sam.mines.examples.IterationExit" time="0.0">
+    <skipped/>
+  </testcase>
+  <testcase name="shouldDemonstrateIteration()" classname="org.sam.mines.examples.IterationExit" time="0.0">
+    <skipped/>
+  </testcase>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

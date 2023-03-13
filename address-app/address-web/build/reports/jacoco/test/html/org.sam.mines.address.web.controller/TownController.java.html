@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="fr"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>TownController.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">address-web</a> &gt; <a href="index.source.html" class="el_package">org.sam.mines.address.web.controller</a> &gt; <span class="el_source">TownController.java</span></div><h1>TownController.java</h1><pre class="source lang-java linenums">package org.sam.mines.address.web.controller;
+
+import org.sam.mines.address.model.TownEntity;
+import org.sam.mines.address.service.TownService;
+import org.sam.mines.address.api.controller.TownApi;
+import org.sam.mines.address.api.model.Town;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
+
+import java.net.URI;
+import java.util.List;
+import java.util.UUID;
+import java.util.stream.Collectors;
+
+
+@CrossOrigin(origins = &quot;*&quot;)
+@RestController
+@RequestMapping
+public class TownController implements TownApi {
+    private TownService townService;
+
+    @Autowired
+<span class="fc" id="L27">    public TownController(TownService townService) {</span>
+<span class="fc" id="L28">        this.townService = townService;</span>
+<span class="fc" id="L29">    }</span>
+
+    @Override
+    public ResponseEntity&lt;Town&gt; create(Town town) {
+<span class="nc" id="L33">        TownEntity saved = townService.save(this.map(town));</span>
+
+<span class="nc" id="L35">        URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path(</span>
+<span class="nc" id="L36">                &quot;/{id}&quot;).buildAndExpand(saved.getId()).toUri();</span>
+
+<span class="nc" id="L38">        return ResponseEntity.created(uri).body(map(saved));</span>
+    }
+
+    @Override
+    public ResponseEntity&lt;String&gt; delete(String id) {
+<span class="nc" id="L43">        townService.delete(UUID.fromString(id));</span>
+
+<span class="nc" id="L45">        return ResponseEntity.ok(id);</span>
+    }
+
+    @Override
+    public ResponseEntity&lt;Town&gt; get(String id) {
+        try {
+<span class="fc" id="L51">            UUID uuid = UUID.fromString(id);</span>
+
+<span class="fc" id="L53">            return townService.get(uuid)</span>
+<span class="fc" id="L54">                    .map(this::map)</span>
+<span class="fc" id="L55">                    .map(ResponseEntity::ok)</span>
+<span class="fc" id="L56">                    .orElse(ResponseEntity.notFound().build());</span>
+<span class="nc" id="L57">        } catch (IllegalArgumentException e) {</span>
+            // Logger
+<span class="nc" id="L59">            return ResponseEntity.badRequest().build();</span>
+        }
+    }
+
+    @Override
+    public ResponseEntity&lt;List&lt;Town&gt;&gt; callList() {
+<span class="nc" id="L65">        return ResponseEntity.ok(townService.getAll().stream().map(this::map).collect(Collectors.toList()));</span>
+    }
+
+    @Override
+    public ResponseEntity&lt;Town&gt; update(Town town) {
+<span class="nc" id="L70">        TownEntity modelTown = this.map(town);</span>
+
+<span class="nc bnc" id="L72" title="All 2 branches missed.">        if (townService.get(modelTown.getId()).isPresent()) {</span>
+<span class="nc" id="L73">            return ResponseEntity.ok(this.map(townService.save(modelTown)));</span>
+        }
+        else {
+<span class="nc" id="L76">            return ResponseEntity.notFound().build();</span>
+        }
+    }
+
+    private TownEntity map(Town town) {
+<span class="nc" id="L81">        return TownEntity.TownBuilder.aTown()</span>
+<span class="nc bnc" id="L82" title="All 2 branches missed.">                .withId(town.getId() == null ? null : UUID.fromString(town.getId()))</span>
+<span class="nc" id="L83">                .withName(town.getName())</span>
+<span class="nc" id="L84">                .withPostCode(Integer.parseInt(town.getPostCode()))</span>
+<span class="nc" id="L85">                .build();</span>
+    }
+
+    private Town map(TownEntity town) {
+
+<span class="fc" id="L90">        Town apiTown = new Town();</span>
+<span class="fc" id="L91">        apiTown.setId(town.getId().toString());</span>
+<span class="fc" id="L92">        apiTown.setName(town.getName());</span>
+<span class="fc" id="L93">        apiTown.setPostCode(String.valueOf(town.getPostCode()));</span>
+
+<span class="fc" id="L95">        return apiTown;</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span></div></body></html>

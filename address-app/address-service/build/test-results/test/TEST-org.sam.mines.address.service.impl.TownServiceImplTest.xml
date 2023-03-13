@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="org.sam.mines.address.service.impl.TownServiceImplTest" tests="9" skipped="0" failures="0" errors="0" timestamp="2023-03-13T09:09:44" hostname="danette" time="1.364">
+  <properties/>
+  <testcase name="shouldDelete()" classname="org.sam.mines.address.service.impl.TownServiceImplTest" time="1.274"/>
+  <testcase name="shouldGetAll()" classname="org.sam.mines.address.service.impl.TownServiceImplTest" time="0.045"/>
+  <testcase name="shouldNotDelete()" classname="org.sam.mines.address.service.impl.TownServiceImplTest" time="0.003"/>
+  <testcase name="shouldGetById()" classname="org.sam.mines.address.service.impl.TownServiceImplTest" time="0.01"/>
+  <testcase name="shouldSaveAValidTown()" classname="org.sam.mines.address.service.impl.TownServiceImplTest" time="0.007"/>
+  <testcase name="shouldFindAllByPostCode()" classname="org.sam.mines.address.service.impl.TownServiceImplTest" time="0.003"/>
+  <testcase name="shouldNotSaveExistingTown()" classname="org.sam.mines.address.service.impl.TownServiceImplTest" time="0.005"/>
+  <testcase name="shouldNotSaveWhenNameIsBlank()" classname="org.sam.mines.address.service.impl.TownServiceImplTest" time="0.002"/>
+  <testcase name="shouldNotGetById()" classname="org.sam.mines.address.service.impl.TownServiceImplTest" time="0.002"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
