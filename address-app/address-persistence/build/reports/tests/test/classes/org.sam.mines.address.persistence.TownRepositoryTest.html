@@ -41,7 +41,7 @@
 </td>
 <td>
 <div class="infoBox" id="duration">
-<div class="counter">0.256s</div>
+<div class="counter">0.444s</div>
 <p>duration</p>
 </div>
 </td>
@@ -79,27 +79,27 @@
 </thead>
 <tr>
 <td class="success">shouldFindAll()</td>
-<td class="success">0.154s</td>
+<td class="success">0.273s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">shouldFindAllByName()</td>
-<td class="success">0.009s</td>
+<td class="success">0.014s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">shouldFindByPostCode()</td>
-<td class="success">0.037s</td>
+<td class="success">0.060s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">shouldSave()</td>
-<td class="success">0.035s</td>
+<td class="success">0.066s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">shouldShowGraph()</td>
-<td class="success">0.021s</td>
+<td class="success">0.031s</td>
 <td class="success">passed</td>
 </tr>
 </table>
@@ -107,17 +107,17 @@
 <div id="tab1" class="tab">
 <h2>Standard output</h2>
 <span class="code">
-<pre>10:09:38,863 |-INFO in ch.qos.logback.classic.LoggerContext[default] - This is logback-classic version 1.4.5
-10:09:38,891 |-INFO in ch.qos.logback.classic.LoggerContext[default] - Could NOT find resource [logback-test.xml]
-10:09:38,893 |-INFO in ch.qos.logback.classic.LoggerContext[default] - Found resource [logback.xml] at [file:/home/damien/Documents/IMT%20Mines%20Ales/Seconde%20Years/Bonne_Pratique_Code/addressApp/address-app/address-persistence/build/resources/test/logback.xml]
-10:09:38,952 |-WARN in ch.qos.logback.core.joran.action.IncludeAction - Could not find resource corresponding to [/org/springframework/boot/logging/logback/base.xml]
-10:09:38,993 |-INFO in ch.qos.logback.core.model.processor.AppenderModelHandler - Processing appender named [STDOUT]
-10:09:38,993 |-INFO in ch.qos.logback.core.model.processor.AppenderModelHandler - About to instantiate appender of type [ch.qos.logback.core.ConsoleAppender]
-10:09:39,002 |-INFO in ch.qos.logback.core.model.processor.ImplicitModelHandler - Assuming default type [ch.qos.logback.classic.encoder.PatternLayoutEncoder] for [encoder] property
-10:09:39,049 |-INFO in ch.qos.logback.classic.model.processor.RootLoggerModelHandler - Setting level of ROOT logger to ERROR
-10:09:39,049 |-INFO in ch.qos.logback.core.model.processor.AppenderRefModelHandler - Attaching appender named [STDOUT] to Logger[ROOT]
-10:09:39,050 |-INFO in ch.qos.logback.core.model.processor.DefaultProcessor@1f6917fb - End of configuration.
-10:09:39,051 |-INFO in ch.qos.logback.classic.joran.JoranConfigurator@41eb94bc - Registering current configuration as safe fallback point
+<pre>11:18:11,614 |-INFO in ch.qos.logback.classic.LoggerContext[default] - This is logback-classic version 1.4.5
+11:18:11,647 |-INFO in ch.qos.logback.classic.LoggerContext[default] - Could NOT find resource [logback-test.xml]
+11:18:11,650 |-INFO in ch.qos.logback.classic.LoggerContext[default] - Found resource [logback.xml] at [file:/C:/Users/Admin/Documents/Julie/Mines/Bonnes%20pratiques%20du%20code/Exercice/BPC/address-app/address-persistence/build/resources/test/logback.xml]
+11:18:11,768 |-WARN in ch.qos.logback.core.joran.action.IncludeAction - Could not find resource corresponding to [/org/springframework/boot/logging/logback/base.xml]
+11:18:11,859 |-INFO in ch.qos.logback.core.model.processor.AppenderModelHandler - Processing appender named [STDOUT]
+11:18:11,859 |-INFO in ch.qos.logback.core.model.processor.AppenderModelHandler - About to instantiate appender of type [ch.qos.logback.core.ConsoleAppender]
+11:18:11,875 |-INFO in ch.qos.logback.core.model.processor.ImplicitModelHandler - Assuming default type [ch.qos.logback.classic.encoder.PatternLayoutEncoder] for [encoder] property
+11:18:11,945 |-INFO in ch.qos.logback.classic.model.processor.RootLoggerModelHandler - Setting level of ROOT logger to ERROR
+11:18:11,946 |-INFO in ch.qos.logback.core.model.processor.AppenderRefModelHandler - Attaching appender named [STDOUT] to Logger[ROOT]
+11:18:11,947 |-INFO in ch.qos.logback.core.model.processor.DefaultProcessor@5b9396d3 - End of configuration.
+11:18:11,948 |-INFO in ch.qos.logback.classic.joran.JoranConfigurator@761e788f - Registering current configuration as safe fallback point
 
 Hibernate: create table address (uuid binary(16) not null, number integer, street varchar(255), town_uuid binary(16), primary key (uuid))
 Hibernate: create table target (uuid binary(16) not null, firstname varchar(255), name varchar(255), primary key (uuid))
@@ -131,8 +131,8 @@ Hibernate: select t1_0.uuid,t1_0.name,t1_0.postcode from town t1_0 where t1_0.uu
 Hibernate: select t1_0.uuid,t1_0.name,t1_0.postcode from town t1_0 where t1_0.postcode=?
 Hibernate: select t1_0.uuid,t1_0.name,t1_0.postcode from town t1_0 where t1_0.uuid=?
 Hibernate: select a1_0.town_uuid,a1_0.uuid,a1_0.number,a1_0.street from address a1_0 where a1_0.town_uuid=?
-org.sam.mines.address.model.AddressEntity@3b69ad19
-org.sam.mines.address.model.AddressEntity@575baeea
+org.sam.mines.address.model.AddressEntity@61db65ae
+org.sam.mines.address.model.AddressEntity@5a477651
 Hibernate: select t1_0.address_uuid,t1_1.uuid,t1_1.firstname,t1_1.name from targetaddress t1_0 join target t1_1 on t1_1.uuid=t1_0.target_uuid where t1_0.address_uuid=?
 []
 Hibernate: select t1_0.address_uuid,t1_1.uuid,t1_1.firstname,t1_1.name from targetaddress t1_0 join target t1_1 on t1_1.uuid=t1_0.target_uuid where t1_0.address_uuid=?
@@ -150,7 +150,7 @@ Hibernate: select t1_0.uuid,t1_0.name,t1_0.postcode from town t1_0 where t1_0.na
 <input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
 </label>
 </div>Generated by 
-<a href="http://www.gradle.org">Gradle 8.0</a> at 13 mars 2023, 10:09:42</p>
+<a href="http://www.gradle.org">Gradle 8.0.2</a> at 15 mars 2023, 11:18:18</p>
 </div>
 </div>
 </body>

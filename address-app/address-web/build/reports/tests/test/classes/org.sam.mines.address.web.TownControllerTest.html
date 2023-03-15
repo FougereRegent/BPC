@@ -41,7 +41,7 @@
 </td>
 <td>
 <div class="infoBox" id="duration">
-<div class="counter">0.359s</div>
+<div class="counter">1.053s</div>
 <p>duration</p>
 </div>
 </td>
@@ -79,12 +79,12 @@
 </thead>
 <tr>
 <td class="success">shouldGetATown()</td>
-<td class="success">0.075s</td>
+<td class="success">0.270s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">shouldNotGetInstanceData()</td>
-<td class="success">0.284s</td>
+<td class="success">0.783s</td>
 <td class="success">passed</td>
 </tr>
 </table>
@@ -92,14 +92,14 @@
 <div id="tab1" class="tab">
 <h2>Standard output</h2>
 <span class="code">
-<pre>10:09:59.149 [Test worker] DEBUG org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTestContextBootstrapper - Neither @ContextConfiguration nor @ContextHierarchy found for test class [TownControllerTest]: using SpringBootContextLoader
-10:09:59.164 [Test worker] DEBUG org.springframework.test.context.support.AbstractContextLoader - Could not detect default resource locations for test class [org.sam.mines.address.web.TownControllerTest]: no resource found for suffixes {-context.xml, Context.groovy}.
-10:09:59.165 [Test worker] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [org.sam.mines.address.web.TownControllerTest]: TownControllerTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
-10:09:59.226 [Test worker] DEBUG org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTestContextBootstrapper - Using ContextCustomizers for test class [TownControllerTest]: [DisableAutoConfigurationContextCustomizer, DisableObservabilityContextCustomizer, TypeExcludeFiltersContextCustomizer, PropertyMappingContextCustomizer, Customizer, ImportsContextCustomizer, ExcludeFilterContextCustomizer, DuplicateJsonObjectContextCustomizer, MockitoContextCustomizer]
-10:09:59.328 [Test worker] DEBUG org.springframework.context.annotation.ClassPathScanningCandidateComponentProvider - Identified candidate component class: file [/home/damien/Documents/IMT Mines Ales/Seconde Years/Bonne_Pratique_Code/addressApp/address-app/address-web/build/classes/java/main/org/sam/mines/address/web/AddressApp.class]
-10:09:59.332 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration org.sam.mines.address.web.AddressApp for test class org.sam.mines.address.web.TownControllerTest
-10:09:59.360 [Test worker] DEBUG org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTestContextBootstrapper - Using TestExecutionListeners for test class [TownControllerTest]: [ServletTestExecutionListener, DirtiesContextBeforeModesTestExecutionListener, ApplicationEventsTestExecutionListener, MockitoTestExecutionListener, DependencyInjectionTestExecutionListener, DirtiesContextTestExecutionListener, TransactionalTestExecutionListener, SqlScriptsTestExecutionListener, EventPublishingTestExecutionListener, RestDocsTestExecutionListener, MockRestServiceServerResetTestExecutionListener, MockMvcPrintOnlyOnFailureTestExecutionListener, WebDriverTestExecutionListener, MockWebServiceServerTestExecutionListener, ResetMocksTestExecutionListener]
-10:09:59.364 [Test worker] DEBUG org.springframework.test.context.support.AbstractDirtiesContextTestExecutionListener - Before test class: class [TownControllerTest], class annotated with @DirtiesContext [false] with mode [null]
+<pre>11:18:30.017 [Test worker] DEBUG org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTestContextBootstrapper - Neither @ContextConfiguration nor @ContextHierarchy found for test class [TownControllerTest]: using SpringBootContextLoader
+11:18:30.034 [Test worker] DEBUG org.springframework.test.context.support.AbstractContextLoader - Could not detect default resource locations for test class [org.sam.mines.address.web.TownControllerTest]: no resource found for suffixes {-context.xml, Context.groovy}.
+11:18:30.036 [Test worker] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [org.sam.mines.address.web.TownControllerTest]: TownControllerTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+11:18:30.177 [Test worker] DEBUG org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTestContextBootstrapper - Using ContextCustomizers for test class [TownControllerTest]: [DisableAutoConfigurationContextCustomizer, DisableObservabilityContextCustomizer, TypeExcludeFiltersContextCustomizer, PropertyMappingContextCustomizer, Customizer, ImportsContextCustomizer, ExcludeFilterContextCustomizer, DuplicateJsonObjectContextCustomizer, MockitoContextCustomizer]
+11:18:30.363 [Test worker] DEBUG org.springframework.context.annotation.ClassPathScanningCandidateComponentProvider - Identified candidate component class: file [C:\Users\Admin\Documents\Julie\Mines\Bonnes pratiques du code\Exercice\BPC\address-app\address-web\build\classes\java\main\org\sam\mines\address\web\AddressApp.class]
+11:18:30.375 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration org.sam.mines.address.web.AddressApp for test class org.sam.mines.address.web.TownControllerTest
+11:18:30.442 [Test worker] DEBUG org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTestContextBootstrapper - Using TestExecutionListeners for test class [TownControllerTest]: [ServletTestExecutionListener, DirtiesContextBeforeModesTestExecutionListener, ApplicationEventsTestExecutionListener, MockitoTestExecutionListener, DependencyInjectionTestExecutionListener, DirtiesContextTestExecutionListener, TransactionalTestExecutionListener, SqlScriptsTestExecutionListener, EventPublishingTestExecutionListener, RestDocsTestExecutionListener, MockRestServiceServerResetTestExecutionListener, MockMvcPrintOnlyOnFailureTestExecutionListener, WebDriverTestExecutionListener, MockWebServiceServerTestExecutionListener, ResetMocksTestExecutionListener]
+11:18:30.444 [Test worker] DEBUG org.springframework.test.context.support.AbstractDirtiesContextTestExecutionListener - Before test class: class [TownControllerTest], class annotated with @DirtiesContext [false] with mode [null]
 
   .   ____          _            __ _ _
  /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
@@ -109,36 +109,36 @@
  =========|_|==============|___/=/_/_/_/
  :: Spring Boot ::                (v3.0.1)
 
-2023-03-13T10:09:59.939+01:00  INFO 67535 --- [    Test worker] o.s.m.address.web.TownControllerTest     : Starting TownControllerTest using Java 17.0.6 with PID 67535 (started by damien in /home/damien/Documents/IMT Mines Ales/Seconde Years/Bonne_Pratique_Code/addressApp/address-app/address-web)
-2023-03-13T10:09:59.941+01:00  INFO 67535 --- [    Test worker] o.s.m.address.web.TownControllerTest     : No active profile set, falling back to 1 default profile: &quot;default&quot;
-2023-03-13T10:09:59.966+01:00 DEBUG 67535 --- [    Test worker] o.s.w.c.s.GenericWebApplicationContext   : Refreshing org.springframework.web.context.support.GenericWebApplicationContext@1124910c
-2023-03-13T10:10:00.349+01:00  INFO 67535 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2023-03-13T10:10:00.403+01:00  INFO 67535 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 42 ms. Found 2 JPA repository interfaces.
-2023-03-13T10:10:02.885+01:00  INFO 67535 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2023-03-13T10:10:05.306+01:00  INFO 67535 --- [    Test worker] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Driver does not support get/set network timeout for connections. (feature not supported)
-2023-03-13T10:10:05.309+01:00  INFO 67535 --- [    Test worker] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.hsqldb.jdbc.JDBCConnection@46fdb4d
-2023-03-13T10:10:05.316+01:00  INFO 67535 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2023-03-13T10:10:05.613+01:00  INFO 67535 --- [    Test worker] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2023-03-13T10:10:05.901+01:00  INFO 67535 --- [    Test worker] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.1.6.Final
-2023-03-13T10:10:06.076+01:00  WARN 67535 --- [    Test worker] org.hibernate.orm.deprecation            : HHH90000021: Encountered deprecated setting [javax.persistence.sharedCache.mode], use [jakarta.persistence.sharedCache.mode] instead
-2023-03-13T10:10:06.535+01:00  INFO 67535 --- [    Test worker] SQL dialect                              : HHH000400: Using dialect: org.hibernate.dialect.HSQLDialect
-2023-03-13T10:10:08.376+01:00  INFO 67535 --- [    Test worker] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2023-03-13T10:10:08.403+01:00  INFO 67535 --- [    Test worker] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2023-03-13T10:10:08.631+01:00  WARN 67535 --- [    Test worker] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2023-03-13T10:10:08.964+01:00 DEBUG 67535 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
-2023-03-13T10:10:09.147+01:00 DEBUG 67535 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : 7 mappings in 'requestMappingHandlerMapping'
-2023-03-13T10:10:09.186+01:00 DEBUG 67535 --- [    Test worker] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
-2023-03-13T10:10:09.207+01:00 DEBUG 67535 --- [    Test worker] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 1 @ExceptionHandler, 1 ResponseBodyAdvice
-2023-03-13T10:10:09.321+01:00  INFO 67535 --- [    Test worker] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
-2023-03-13T10:10:09.322+01:00  INFO 67535 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
-2023-03-13T10:10:09.323+01:00  INFO 67535 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
-2023-03-13T10:10:09.373+01:00  INFO 67535 --- [    Test worker] o.s.m.address.web.TownControllerTest     : Started TownControllerTest in 9.951 seconds (process running for 11.257)
-2023-03-13T10:10:09.472+01:00 DEBUG 67535 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.sam.mines.address.web.controller.TownController#get(String)
-2023-03-13T10:10:09.617+01:00 DEBUG 67535 --- [    Test worker] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json]
-2023-03-13T10:10:09.654+01:00 DEBUG 67535 --- [    Test worker] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Nothing to write: null body
-2023-03-13T10:10:09.695+01:00 DEBUG 67535 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.sam.mines.address.web.controller.TownController#get(String)
-2023-03-13T10:10:09.700+01:00 DEBUG 67535 --- [    Test worker] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json]
-2023-03-13T10:10:09.702+01:00 DEBUG 67535 --- [    Test worker] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [class Town {&lt;EOL&gt;    id: c0dce8a9-f9f3-4b52-9f93-999557e08f39&lt;EOL&gt;    name: some town&lt;EOL&gt;    postCode: 0&lt;EOL&gt;}]
+2023-03-15T11:18:31.640+01:00  INFO 11844 --- [    Test worker] o.s.m.address.web.TownControllerTest     : Starting TownControllerTest using Java 19.0.2 with PID 11844 (started by Admin in C:\Users\Admin\Documents\Julie\Mines\Bonnes pratiques du code\Exercice\BPC\address-app\address-web)
+2023-03-15T11:18:31.644+01:00  INFO 11844 --- [    Test worker] o.s.m.address.web.TownControllerTest     : No active profile set, falling back to 1 default profile: &quot;default&quot;
+2023-03-15T11:18:31.722+01:00 DEBUG 11844 --- [    Test worker] o.s.w.c.s.GenericWebApplicationContext   : Refreshing org.springframework.web.context.support.GenericWebApplicationContext@6d0114c0
+2023-03-15T11:18:32.896+01:00  INFO 11844 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-03-15T11:18:33.102+01:00  INFO 11844 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 185 ms. Found 2 JPA repository interfaces.
+2023-03-15T11:18:37.109+01:00  INFO 11844 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-03-15T11:18:38.863+01:00  INFO 11844 --- [    Test worker] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Driver does not support get/set network timeout for connections. (feature not supported)
+2023-03-15T11:18:38.867+01:00  INFO 11844 --- [    Test worker] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.hsqldb.jdbc.JDBCConnection@426ee667
+2023-03-15T11:18:38.871+01:00  INFO 11844 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-03-15T11:18:39.018+01:00  INFO 11844 --- [    Test worker] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-03-15T11:18:39.232+01:00  INFO 11844 --- [    Test worker] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.1.6.Final
+2023-03-15T11:18:39.439+01:00  WARN 11844 --- [    Test worker] org.hibernate.orm.deprecation            : HHH90000021: Encountered deprecated setting [javax.persistence.sharedCache.mode], use [jakarta.persistence.sharedCache.mode] instead
+2023-03-15T11:18:40.162+01:00  INFO 11844 --- [    Test worker] SQL dialect                              : HHH000400: Using dialect: org.hibernate.dialect.HSQLDialect
+2023-03-15T11:18:42.781+01:00  INFO 11844 --- [    Test worker] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-03-15T11:18:42.810+01:00  INFO 11844 --- [    Test worker] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-03-15T11:18:43.230+01:00  WARN 11844 --- [    Test worker] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-03-15T11:18:43.709+01:00 DEBUG 11844 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2023-03-15T11:18:44.058+01:00 DEBUG 11844 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : 7 mappings in 'requestMappingHandlerMapping'
+2023-03-15T11:18:44.138+01:00 DEBUG 11844 --- [    Test worker] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2023-03-15T11:18:44.166+01:00 DEBUG 11844 --- [    Test worker] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 1 @ExceptionHandler, 1 ResponseBodyAdvice
+2023-03-15T11:18:44.413+01:00  INFO 11844 --- [    Test worker] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2023-03-15T11:18:44.414+01:00  INFO 11844 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2023-03-15T11:18:44.419+01:00  INFO 11844 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 2 ms
+2023-03-15T11:18:44.511+01:00  INFO 11844 --- [    Test worker] o.s.m.address.web.TownControllerTest     : Started TownControllerTest in 13.921 seconds (process running for 16.718)
+2023-03-15T11:18:44.737+01:00 DEBUG 11844 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.sam.mines.address.web.controller.TownController#get(String)
+2023-03-15T11:18:45.139+01:00 DEBUG 11844 --- [    Test worker] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json]
+2023-03-15T11:18:45.254+01:00 DEBUG 11844 --- [    Test worker] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Nothing to write: null body
+2023-03-15T11:18:45.374+01:00 DEBUG 11844 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.sam.mines.address.web.controller.TownController#get(String)
+2023-03-15T11:18:45.393+01:00 DEBUG 11844 --- [    Test worker] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json]
+2023-03-15T11:18:45.398+01:00 DEBUG 11844 --- [    Test worker] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [class Town {&lt;EOL&gt;    id: f3f0c386-535e-4668-932a-854380fe8011&lt;EOL&gt;    name: some town&lt;EOL&gt;    postCode: 0&lt;EOL&gt;}]
 </pre>
 </span>
 </div>
@@ -150,7 +150,7 @@
 <input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
 </label>
 </div>Generated by 
-<a href="http://www.gradle.org">Gradle 8.0</a> at 13 mars 2023, 10:10:09</p>
+<a href="http://www.gradle.org">Gradle 8.0.2</a> at 15 mars 2023, 11:18:46</p>
 </div>
 </div>
 </body>

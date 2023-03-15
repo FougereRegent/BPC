@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="org.sam.mines.examples.OptionalExample" tests="2" skipped="0" failures="0" errors="0" timestamp="2023-03-13T09:09:17" hostname="danette" time="0.002">
+<testsuite name="org.sam.mines.examples.OptionalExample" tests="2" skipped="0" failures="0" errors="0" timestamp="2023-03-15T10:18:04" hostname="XPS" time="0.006">
   <properties/>
-  <testcase name="shouldNotThrowNullPointerException()" classname="org.sam.mines.examples.OptionalExample" time="0.001"/>
-  <testcase name="shouldThrowNullPointerException()" classname="org.sam.mines.examples.OptionalExample" time="0.001"/>
+  <testcase name="shouldNotThrowNullPointerException()" classname="org.sam.mines.examples.OptionalExample" time="0.002"/>
+  <testcase name="shouldThrowNullPointerException()" classname="org.sam.mines.examples.OptionalExample" time="0.003"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
